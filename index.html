@@ -103,13 +103,20 @@
         <div class="container">
             <h2>Comida saludable para tu ritmo de vida</h2>
             <p>Ingredientes frescos y recetas saludables entregadas directamente a tu puerta. ¡Nutre tu cuerpo sin complicaciones!</p>
-            <video width="80%" autoplay muted loop>
+            <video id="promoVideo" width="80%" muted loop>
                 <source src="https://pablozamora11.github.io/BOX_SALUDABLE_/VIDEO-2025-01-03-17-20-45.mp4" type="video/mp4">
                 Tu navegador no soporta el video.
             </video>
             <a href="#planes" class="cta">Ver Planes</a>
         </div>
     </section>
+
+    <script>
+        window.addEventListener('load', function() {
+            const video = document.getElementById('promoVideo');
+            video.play().catch(error => console.log('La reproducción automática fue bloqueada:', error));
+        });
+    </script>
 
     <section id="planes" class="container">
         <h2>Elige tu plan</h2>
