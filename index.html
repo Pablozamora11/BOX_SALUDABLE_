@@ -11,6 +11,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background: url('https://pablozamora11.github.io/BOX_SALUDABLE_/images/comida-saludable.jpg') no-repeat center center fixed;
+            background-size: cover;
         }
         .container {
             width: 90%;
@@ -18,7 +20,7 @@
             text-align: center;
         }
         header {
-            background: #4CAF50;
+            background: rgba(76, 175, 80, 0.9);
             color: white;
             padding: 20px 0;
         }
@@ -36,6 +38,8 @@
         }
         section {
             padding: 60px 0;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
         }
         .cta {
             display: inline-block;
@@ -81,6 +85,16 @@
             font-size: 18px;
             cursor: pointer;
         }
+        .sound-button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
@@ -103,15 +117,21 @@
         <div class="container">
             <h2>Comida saludable para tu ritmo de vida</h2>
             <p>Ingredientes frescos y recetas saludables entregadas directamente a tu puerta. ¡Nutre tu cuerpo sin complicaciones!</p>
-            <video id="promoVideo" width="80%" loop>
+            <video id="promoVideo" width="80%" autoplay loop muted>
                 <source src="https://pablozamora11.github.io/BOX_SALUDABLE_/VIDEO-2025-01-03-17-20-45.mp4" type="video/mp4">
                 Tu navegador no soporta el video.
             </video>
+            <button class="sound-button" onclick="activarSonido()">Activar sonido</button>
             <a href="#planes" class="cta">Ver Planes</a>
         </div>
     </section>
 
     <script>
+        function activarSonido() {
+            const video = document.getElementById('promoVideo');
+            video.muted = false;
+            video.play();
+        }
         window.addEventListener('load', function() {
             const video = document.getElementById('promoVideo');
             video.play().catch(error => console.log('La reproducción automática fue bloqueada:', error));
@@ -139,7 +159,7 @@
     <section id="sobre-nosotros">
         <div class="container">
             <h2>Sobre Nosotros</h2>
-            <p>Somos Camino Arraiza y Pablo Zamora, apasionados por la vida saludable. Creamos Box Saludable con la misión de facilitar una alimentación equilibrada y deliciosa para personas con poco tiempo. Queremos ayudarte a nutrir tu cuerpo y disfrutar de cada comida.</p>
+            <p>Somos Camino Arraiza, Pablo Zamora y Natalia García, apasionados por la vida saludable. Creamos Box Saludable con la misión de facilitar una alimentación equilibrada y deliciosa para personas con poco tiempo. Queremos ayudarte a nutrir tu cuerpo y disfrutar de cada comida.</p>
         </div>
     </section>
 
